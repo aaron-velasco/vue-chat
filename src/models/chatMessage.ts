@@ -5,4 +5,5 @@ export type chatMessage = {
     receiverId: string;
     text: string;
     timestamp: Date;
+    attachment: Attachment;
 }
