@@ -1,7 +1,7 @@
 <template>
 <div class="chat-message my-4 al">
          <div class="flex" :class="[isSender ? 'flex-row-reverse' : '']">
-            <div class="flex flex-col space-y-2 text-xs max-w-xs mx-2 p-4 items-start order-2" :class="[isSender ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600']">
+            <div class="flex flex-col space-y-2 mx-2 p-4 items-start order-2" :class="[isSender ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-600']">
                 <span>{{ message.text }}</span>
                 <small>{{ getFormattedDate(message.timestamp) }}</small>
             </div>

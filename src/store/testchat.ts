@@ -25,7 +25,7 @@ export const testChat: ChatMessage[] = [
     {
         senderId: '2',
         receiverId: '1',
-        text: '¡Gran trabajo Sivial! Pero creo que deberías revisar el punto 3. Intenta añadir un poco más de contexto y un apartado final de conclusiones personales.',
+        text: '¡Gran trabajo Silvia! Pero creo que deberías revisar el punto 3. Intenta añadir un poco más de contexto y un apartado final de conclusiones personales.',
         timestamp: new Date('2018-12-29T10:11'),
         attachment: undefined,
     },

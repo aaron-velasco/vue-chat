@@ -1,10 +1,11 @@
 <template>
-    <section class="flex flex-col w-screen border-t-2 border-gray-300">
+    <section class="flex flex-col w-screen h-screen border-t-2 border-gray-300 justify-between">
         <div class="w-100">
             <h1 class="text-center text-xl font-bold border-b-2 py-4 border-gray-600">Comentarios</h1>
         </div>
-        <div v-for="message in currentChatContent">
-            <ChatBubble :message="message" />
+        <div class="mx-4 h-" v-for="message in currentChatContent">
+            <ChatBubble v-if="!message.attachment" :message="message" />
+            <AttachmentBubble v-else :message="message" />
         </div>
         <form>
             <div class="flex items-center px-3 py-2 rounded-xl ">
@@ -29,6 +30,7 @@
 import { useChatStore } from "../store/store"
 import { storeToRefs } from 'pinia'
 import ChatBubble from './ChatBubble.vue';
+import AttachmentBubble from './AttachmentBubble.vue';
 
 const { fetchChat } = useChatStore()
 fetchChat();
