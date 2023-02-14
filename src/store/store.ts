@@ -1,24 +1,32 @@
 import { defineStore } from 'pinia'
-import { chatMessage } from '../models/chatMessage';
+import { ChatMessage } from '../models/chatMessage';
+import { testChat } from './testchat';
 
 interface ChatState {
-    user: any;
-    profile: any;
-    chatList: chatMessage[];
-    currentChatId: string;
-  }
+  user: any;
+  profile: any;
+  currentChatContent: ChatMessage[];
+  currentChatId: string;
+}
 
 export const useAlertsStore = defineStore("store", {
   state: (): ChatState => ({
-    user: 'CS',
+    user: '1',
     profile: '',
-    chatList: [],
+    currentChatContent: [],
     currentChatId: ''
   }),
-  getters: {},
+  getters: {
+    getCurrentChatId(state): string {
+      return state.currentChatId;
+    },
+    getChatContent(state): ChatMessage[] {
+      return state.currentChatContent;
+    }
+  },
   actions: {
-    async fetchChat(): Promise<void> {
-        
+    fetchChat(): void {
+      this.currentChatContent = testChat;
     }
   },
 })
