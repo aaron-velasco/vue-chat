@@ -1,6 +1,6 @@
 import { Attachment } from "./attachment";
 
-export type ChatMessage = {
+export interface ChatMessage {
     senderId: string;
     receiverId: string;
     text: string;

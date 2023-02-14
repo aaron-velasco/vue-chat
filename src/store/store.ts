@@ -9,7 +9,7 @@ interface ChatState {
   currentChatId: string;
 }
 
-export const useAlertsStore = defineStore("store", {
+export const useChatStore = defineStore("store", {
   state: (): ChatState => ({
     user: '1',
     profile: '',
