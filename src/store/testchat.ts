@@ -13,6 +13,7 @@ export const testChat: ChatMessage[] = [
             url: 'testurl',
             timestamp: new Date('2018-12-28T14:45'),
             filetype: 'Documento/PDF',
+            version: '1'
         }
     },
     {
@@ -40,6 +41,7 @@ export const testChat: ChatMessage[] = [
             url: 'testurl',
             timestamp: new Date('2018-12-30T08:22'),
             filetype: 'Documento/PDF',
+            version: '2'
         }
     },
     {

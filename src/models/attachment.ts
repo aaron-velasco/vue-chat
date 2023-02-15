@@ -4,4 +4,5 @@ export interface Attachment {
     url: string;
     timestamp: Date;
     filetype: string;
+    version:string;
 }

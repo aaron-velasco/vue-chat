@@ -2,6 +2,7 @@
 <div class="chat-message my-4 al">
          <div class="flex justify-between align border-b-2 border-gray-200 px-8">
             <div class="flex flex-col space-y-2 max-w-xs mx-2 p-4 items-start" >
+                <span>VERSIÓN {{ message.attachment?.version }}</span>
                 <span class="text-blue-400 font-bold">{{ message.attachment?.name }}</span>
                 <span>{{ message.attachment?.filetype }} {{ getFormattedDate(message.timestamp) }}</span>
             </div>

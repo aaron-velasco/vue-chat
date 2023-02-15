@@ -3,8 +3,8 @@
         <div class="w-100">
             <h1 class="text-center text-xl font-bold border-b-2 py-4 border-gray-600">Comentarios</h1>
         </div>
-        <div class="mx-4 h-" v-for="message in currentChatContent">
-            <ChatBubble v-if="!message.attachment" :message="message" />
+        <div class="mx-4" v-for="message in currentChatContent">
+            <ChatBubble v-if="!message.attachment" :message="message" :profile-image="(message.senderId === getCurrentUserId) ? profileImage : recieverImage" />
             <AttachmentBubble v-else :message="message" />
         </div>
         <form>
@@ -31,8 +31,9 @@ import { useChatStore } from "../store/store"
 import { storeToRefs } from 'pinia'
 import ChatBubble from './ChatBubble.vue';
 import AttachmentBubble from './AttachmentBubble.vue';
+import { ChatMessage } from "../models/chatMessage";
 
-const { fetchChat } = useChatStore()
+const { fetchChat, getCurrentUserId } = useChatStore()
 fetchChat();
-const { currentChatContent } = storeToRefs(useChatStore())
+const { currentChatContent, profileImage, recieverImage } = storeToRefs(useChatStore())
 </script>
